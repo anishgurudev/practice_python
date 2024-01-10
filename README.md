@@ -1,2 +1,2 @@
 # practice_python
-basic code practicing python 
+basic code for practicing python 
