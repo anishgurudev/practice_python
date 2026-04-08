@@ -40,3 +40,13 @@ sample_string = "Python"
 
 print(list(sample_string)) # ['P', 'y', 't', 'h', 'o', 'n']
 print(tuple(sample_string)) # ('P', 'y', 't', 'h', 'o', 'n')
+
+#| Method            | Removes From    | Removes What   | Best For              |
+# | ----------------- | --------------- | -------------- | --------------------- |
+# | strip()           | Edges only      | All whitespace | Clean user input      |
+# | lstrip()          | Left edge only  | All whitespace | Left trim             |
+# | rstrip()          | Right edge only | All whitespace | Right trim            |
+# | split() + join()  | Everywhere      | All whitespace | Normalize full string |
+# | replace("\\t","") | Everywhere      | Specific type  | Target one whitespace |
+# | re.sub(r'\\s+','') | Everywhere      | All whitespace | Complex patterns      |
+# | translate()       | Everywhere      | All whitespace | Best performance      |
