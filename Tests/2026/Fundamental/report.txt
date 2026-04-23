@@ -1,0 +1,24 @@
+LOG ANALYSIS REPORT
+----------------------
+INFO   : 2
+WARNING: 2
+ERROR  : 2
+----------------------
+Error Message
+----------------------
+- FAILED TO LOAD PAGE
+- TIMEOUT OCCURRED
+----------------------
+Warning Message
+----------------------
+- DISK SPACE LOW
+- CPU USAGE HIGH
+----------------------
+Normalize log
+----------------------
+INFO: USER LOGGED IN
+ERROR: FAILED TO LOAD PAGE
+WARNING: DISK SPACE LOW
+INFO:  FILE UPLOADED
+ERROR: TIMEOUT OCCURRED
+WARNING: CPU USAGE HIGH

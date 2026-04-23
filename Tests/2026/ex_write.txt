@@ -1,0 +1,3 @@
+Welcome to the python writing world, write_example.txt
+Now you have two lines! you are learning & growing fast!
+Now you are writing 3rd line
