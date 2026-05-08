@@ -214,7 +214,7 @@ def count_char(string):
     return dict(Counter(string))
 
 
-print(count_char("Automation"))
+print(count_char("Automation")) #{'A': 1, 'u': 1, 't': 2, 'o': 2, 'm': 1, 'a': 1, 'i': 1, 'n': 1}
 
 
 def count_vowel_charactor(string):
@@ -253,7 +253,7 @@ def remove_duplicate(string):
     return "".join(dict.fromkeys(string))
 
 
-print(remove_duplicate("programming"))
+print(remove_duplicate("programming")) #progamin
 
 #14 Armstrong Number check
 """
@@ -290,13 +290,13 @@ sentence = "hello how are you!          "
 
 def reverse_sentence(sentence):
     res = ""
-    for word in sentence.strip().split(" "):
+    for word in sentence.strip().split(" "): #['hello', 'how', 'are', 'you!']
         res = word + " " + res
         # print(res)
     return res
 
 
-print(reverse_sentence(sentence))
+print(reverse_sentence(sentence))#you! are how hello
 
 
 #16) count word in sentence
@@ -307,7 +307,7 @@ def count_word(sentence):
     char = [len(word) for word in words]
     # char = list(map(len, sentence.split()))
 
-    # print(words, char)
+    # print(words, char)   #['Python', 'is', 'fun', 'and', 'versatile'] [6, 2, 3, 3, 9]
     return char
 
 
@@ -341,7 +341,7 @@ print(is_anagram("listen","silent"))
 
 
 #18 Write a programme to count the unique charactor or longest substring
-s = "abcabcbb"
+s = "abcabcbdb"
 def longest_substring(s):
     seen= set()
     dupli = set()
@@ -352,6 +352,86 @@ def longest_substring(s):
             seen.add(char)
     return dupli
 
-print(longest_substring(s))
+print(longest_substring(s)) #{'b', 'a', 'c'}
 
 
+
+
+# 19) Write a programme to count
+def char_count():
+    text = "apple banana mango grape"
+    words = text.split()
+    for word in words:
+        ch = input(f"enter word to search in {word} (or q to quit: ) ").strip().lower()
+        if ch == 'q':
+            print("Exiting...")
+            return
+        if len(ch)!=1:
+            print(" enter correct word ")
+            continue
+
+        count = word.count(ch)
+        print(f"{word} {ch} {count}\n")
+
+    # 🔹 Part 2: Most frequent character in full string
+    clean_text = text.replace(" ", "").lower()
+    freq = Counter(clean_text)
+
+    char, count = freq.most_common(1)[0]
+
+    print(f"Most frequent character in full string: '{char}' with count = {count}")
+
+char_count()
+#20) Reverse each word individually but keep the word order same
+
+sentence = "Welcome to Python 3.6"
+
+# 1st way:
+# One liner - List Comprehension
+result = " ".join([word[::-1] for word in sentence.split()])
+
+print(result)  # emocleW ot nohtyP 6.3
+
+# 2nd way:
+# Step 1 - Split into words
+words = sentence.split()
+print(words)  # ['Welcome', 'to', 'Python', '3.6']
+
+# Step 2 - Reverse each word
+reversed_words = [word[::-1] for word in words]
+print(reversed_words)  # ['emocleW', 'ot', 'nohtyP', '6.3']
+
+# Step 3 - Join back
+result = " ".join(reversed_words)
+print(result)  # emocleW ot nohtyP 6.3
+
+
+#21 ) Reverse String — Keep Numbers & Special Chars in Place
+
+def reverse_letters_only(s):
+    # Step 1: Extract only letters
+    letters = [c for c in s if c.isalpha()]
+
+    # Step 2: Reverse the letters
+    letters.reverse()
+
+    # Step 3: Put letters back, keep others in place
+    result = []
+    letter_index = 0
+
+    for char in s:
+        if char.isalpha():
+            result.append(letters[letter_index])
+            letter_index += 1
+        else:
+            result.append(char)  # number/special stays
+
+    return "".join(result)
+
+
+# Test
+print(reverse_letters_only("a1b2c3d"))
+# d1c2b3a
+
+print(reverse_letters_only("Welcome to Python 3.6"))
+# nohtyPo te mocleW 3.6
