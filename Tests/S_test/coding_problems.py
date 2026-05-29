@@ -435,3 +435,38 @@ print(reverse_letters_only("a1b2c3d"))
 
 print(reverse_letters_only("Welcome to Python 3.6"))
 # nohtyPo te mocleW 3.6
+
+#22) write a function to add two list using class
+
+list1 = [1, 2, 3, 4]
+list2 = [5, 6, 7, 8]
+n1 = 10
+n2 = 20
+
+
+class listOperation:
+
+    def __init__(self, list1, list2, n1, n2):
+        self.list1 = list1
+        self.list2 = list2
+        self.n1 = n1
+        self.n2 = n2
+
+    def process_list(self):
+        self.list1.append(self.n1)
+        self.list2.append(self.n2)
+        return [a + b for a, b in zip(self.list1, self.list2)]
+
+
+obj = listOperation(list1, list2, n1, n2)
+
+print(obj.process_list())
+
+
+#23)write a program for finding non repeating charactor
+from collections import Counter
+count = Counter(s)
+for ch in s:
+    if count[ch]==1:
+        print(ch)
+        break
