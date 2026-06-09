@@ -496,3 +496,42 @@ def longest_substring(s):
 
 
 print(longest_substring("abcabcbb"))
+
+#25)longest prefix
+words = ["Flight", "Flow", "Florida", "Flower", "Floor", "Flour"]
+
+def longest_prefix(words):
+    if not words:          # Edge case: empty list
+        return ""
+    result = ""
+
+    for char in zip(*words):        # Group characters column-wise
+        if len(set(char)) == 1:     # All same character at this position?
+            result += char[0]       # Yes → add to result
+        else:
+            break                   # No → stop here
+
+    return result
+
+print(longest_prefix(words))        # Output: Fl
+
+#27) longest subfix
+words = ["testing", "running", "playing", "string"]
+
+def longest_common_suffix_zip(words):
+    if not words:           # Edge case: empty list
+        return ""
+
+    result = ""
+
+    # zip from the END of each word using reversed slicing
+    for char in zip(*[w[::-1] for w in words]):
+        if len(set(char)) == 1:             # All same character at this position?
+            result += char[0]               # Yes → add to result
+        else:
+            break                           # No → stop here
+
+    # Reverse the collected suffix characters
+    return result[::-1]
+
+print(longest_common_suffix_zip(words))  # Output: ing

@@ -113,3 +113,21 @@ def count_vowel_charactor(s):
 vowel, constant = count_vowel_charactor("automation")
 print(vowel,constant)
 print(f"vowel : {vowel} & contant: {constant}, in the string")
+
+words = ["Flight", "Flow", "Florida", "Flower", "Floor", "Flour"]
+
+
+def longest_prefix(words):
+    if not words:
+        return ""
+    result = ""
+
+    for char in zip(*words):
+        if len(set(char)) == 1:
+            result += char[0]
+        else:
+            break
+    return result
+
+
+print(longest_prefix(words))
